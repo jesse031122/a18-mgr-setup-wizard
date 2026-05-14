@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #ff8f4f;
+  --brand-cyan: #35eded;
+  --bg-base: #0a0a0a;
+  --bg-card: rgba(18, 14, 10, 0.88);
+  --border-subtle: #221a10;
+  --border-hover: #3a2810;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-syne, 'Syne', sans-serif);
+}
+
+/* Utility button classes */
+.btn-orange {
+  background: var(--brand-orange);
+  color: #0a0a0a;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.btn-orange:hover:not(:disabled) { background: #e07030; }
+.btn-orange:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-cyan {
+  border: 1px solid rgba(53, 237, 237, 0.25);
+  color: var(--brand-cyan);
+  background: transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-cyan:hover { background: rgba(53, 237, 237, 0.08); border-color: rgba(53, 237, 237, 0.5); }
+
+.btn-ghost-orange {
+  background: rgba(255, 143, 79, 0.08);
+  border: 1px solid rgba(255, 143, 79, 0.2);
+  color: var(--brand-orange);
+  transition: background 0.15s;
+}
+.btn-ghost-orange:hover:not(:disabled) { background: rgba(255, 143, 79, 0.14); }
+.btn-ghost-orange:disabled { opacity: 0.4; }
+
+/* MSP card base */
+.msp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.msp-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 4px 24px rgba(255, 143, 79, 0.06);
+}
+
+/* Mono font helper */
+.font-mono-msp {
+  font-family: var(--font-dm-mono, 'DM Mono', monospace);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2018; border-radius: 3px; }
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
